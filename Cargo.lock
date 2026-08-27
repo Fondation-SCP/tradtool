@@ -1568,6 +1568,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
 
 [[package]]
+name = "siphasher"
+version = "1.0.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8ee5873ec9cce0195efcb7a4e9507a04cd49aec9c83d0389df45b1ef7ba2e649"
+
+[[package]]
 name = "slab"
 version = "0.4.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1605,6 +1611,41 @@ name = "streaming-iterator"
 version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b2231b7c3057d5e4ad0156fb3dc807d900806020c5ffa3ee6ff2c8c76fb8520"
+
+[[package]]
+name = "stylance"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "252bdc37547d27ee7ccd20e028dced7acfdb64b561ac4d8a58393cf1adec0f14"
+dependencies = [
+ "stylance-macros",
+]
+
+[[package]]
+name = "stylance-core"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cd267d69de4c0bcb01423fdd641a3007798842c19fe4da6b6acac0efa9ed0b41"
+dependencies = [
+ "anyhow",
+ "serde",
+ "siphasher",
+ "toml",
+ "winnow",
+]
+
+[[package]]
+name = "stylance-macros"
+version = "0.8.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c7a1fdbb4d152b969919646561e8a2d3beb0b03b1014570fd573e55a3b3b627"
+dependencies = [
+ "anyhow",
+ "proc-macro2",
+ "quote",
+ "stylance-core",
+ "syn 2.0.119",
+]
 
 [[package]]
 name = "syn"
@@ -1748,10 +1789,12 @@ version = "1.1.4+spec-1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3aace63f4bbcdfc2c965b059de67119c89c4017a70d633be6c104910f67056f5"
 dependencies = [
+ "indexmap",
  "serde_core",
  "serde_spanned",
  "toml_datetime",
  "toml_parser",
+ "toml_writer",
  "winnow",
 ]
 
@@ -1774,11 +1817,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "toml_writer"
+version = "1.1.2+spec-1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7d56353a2a665ad0f41a421187180aab746c8c325620617ad883a99a1cbe66d2"
+
+[[package]]
 name = "tradtool"
 version = "0.1.0"
 dependencies = [
  "kode-leptos",
  "leptos",
+ "stylance",
 ]
 
 [[package]]

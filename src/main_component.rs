@@ -1,10 +1,13 @@
 use kode_leptos::CodeEditor;
 use leptos::prelude::*;
+use stylance::import_style;
+
+import_style!(style, "main.module.scss");
 
 #[component]
 pub(crate) fn Main() -> impl IntoView {
     view! {
-        <main style="display: flex; height: 100vh;">
+        <main class=style::main>
             <CodeEditor />
             <CodeEditor />
         </main>

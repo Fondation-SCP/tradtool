@@ -1,0 +1,4 @@
+[[hooks]]
+stage = "pre_build"
+command = "stylance"
+command_arguments = ["./", "--output-file", "./target/stylance/tradtool.css"]

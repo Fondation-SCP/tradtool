@@ -6,3 +6,9 @@ edition = "2024"
 [dependencies]
 kode-leptos = "0.5.4"
 leptos = { version = "0.8.20", features = ["csr"] }
+stylance = "0.8.4"
+
+[package.metadata.stylance]
+output_dir = "./target/stylance/"
+extensions = [".module.scss", ".module.css"]
+folders = ["./src"]
