@@ -9,6 +9,8 @@
 
   .sidebar {
     width: min-content;
+    background: var(--kode-bg);
+    color: var(--kode-fg);
     transition: width 0.25s ease;
     overflow: hidden;
   }

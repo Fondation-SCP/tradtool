@@ -1,4 +1,5 @@
 use crate::main_component::Main;
+use kode_leptos::Theme;
 use leptos::prelude::*;
 use stylance::{classes, import_style};
 
@@ -8,10 +9,11 @@ import_style!(style, "layout.module.scss");
 
 fn main() {
     leptos::mount::mount_to_body(|| {
+        let theme = Theme::dark();
         let (sidebar_collapsed, set_sidebar_collapsed) = signal(true);
 
         view! {
-            <div class=style::layout>
+            <div style=theme.to_css_vars() class=style::layout>
                 <nav class=move || {
                     classes!(style::sidebar, sidebar_collapsed.get().then_some(style::collapsed))
                 }>
@@ -24,7 +26,7 @@ fn main() {
                         </li>
                     </ul>
                 </nav>
-                <Main />
+                <Main theme=theme.clone() />
             </div>
         }
     })
